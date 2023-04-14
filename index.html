@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANIM KENDİM</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Caveat:wght@600&family=DynaPuff&family=Kanit:ital,wght@0,800;1,800&family=Montserrat+Alternates:ital,wght@1,300&family=Mouse+Memoirs&family=Mynerve&family=PT+Sans+Narrow&family=Play&family=Quicksand:wght@300&family=Rowdies&family=Russo+One&family=Secular+One&family=Yatra+One&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Quicksand", "Times New Roman";
+            overflow: hidden;
+        }
+
+        html {
+            background: radial-gradient(circle,
+                    rgb(47, 22, 68) 0%,
+                    rgb(63, 5, 63) 100%);
+        }
+
+        /* -----------------------------------------------
+        Name : CANIM KENDIM
+        Designer : Mikail Enes Kaya
+        URL : www.mikaileneskaya.com
+        ----------------------------------------------- */
+
+        .container {
+            width: auto;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 100px;
+            color: rgb(218, 235, 250);
+            user-select: none;
+            font-family: "Russo One";
+        }
+
+        #tikla {
+            display: none;
+            position: absolute;
+            top: 10%;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 1rem;
+            font-family: "Quicksand";
+            user-select: none;
+        }
+
+        #tikla img {
+            width: 3rem;
+            height: auto;
+            opacity: 0.8;
+            user-select: none;
+        }
+
+        span {
+            position: absolute;
+            font-size: 0.7rem;
+            bottom: 40px;
+            color: rgba(255, 255, 255, 0.35);
+            user-select: none;
+        }
+
+        .circle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgb(138, 80, 165);
+            transform: scale(0);
+            opacity: 1;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            z-index: 9999;
+        }
+
+        @media only screen and (max-width: 930px) {
+            h1 {
+                font-size: 75px;
+            }
+        }
+
+        @media only screen and (max-width: 750px) {
+            h1 {
+                font-size: 65px;
+            }
+
+            span {
+                bottom: 60px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 50px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            span {
+                font-size: 0.6rem;
+            }
+
+            #tikla {
+                font-size: 0.6rem;
+                letter-spacing: 0.6rem;
+            }
+
+            #tikla img {
+                width: 1.8rem;
+                height: auto;
+                opacity: 0.8;
+            }
+        }
+
+        @media only screen and (max-width: 430px) {
+            h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CANIM KENDİM</h1>
+        <div id="tikla"><img
+                src="https://em-content.zobj.net/thumbs/160/emojipedia/264/heart-on-fire_2764-fe0f-200d-1f525.png"
+                alt=""> EKRANA DOKUN<img
+                src="https://em-content.zobj.net/thumbs/160/emojipedia/264/heart-on-fire_2764-fe0f-200d-1f525.png"
+                alt="">
+        </div>
+        <span>UNUTMA Kİ HİÇBİR ŞEY SENDEN DAHA DEĞERLİ DEĞİL</span>
+    </div>
+
+    <!-- -----------------------------------------------
+    Name : CANIM KENDIM
+    Designer : Mikail Enes Kaya
+    URL : www.mikaileneskaya.com
+    ----------------------------------------------- -->
+
+    <script>
+        //font değiştirmek için
+        var fontTurleri = ["Bebas Neue", "Caveat", "Rowdies", "Play", "Montserrat Alternates", "DynaPuff", "Mouse Memoirs", "Quicksand", "Bangers", "Mynerve", "kanit", "PT Sans Narrow", "Secular One", "Yatra One"];
+        var fontIndeksi = 0;
+
+        function fontDegistir() {
+            var h1Element = document.getElementsByTagName("h1")[0];
+            var seciliFont = fontTurleri[fontIndeksi];
+
+            h1Element.style.fontFamily = seciliFont;
+
+            fontIndeksi++;
+            if (fontIndeksi >= fontTurleri.length) {
+                fontIndeksi = 0;
+            }
+        }
+
+        document.addEventListener("click", fontDegistir);
+    </script>
+
+    <script>
+        //ekran ilk açıldığında kısa süreli "ekrana dokun" yazısı için 
+        document.addEventListener("DOMContentLoaded", function () {
+            var tiklaElementi = document.getElementById("tikla");
+            tiklaElementi.style.display = "block";
+            setTimeout(function () {
+                var opacity = 1;
+                var fadeTimer = setInterval(function () {
+                    if (opacity <= 0) {
+                        clearInterval(fadeTimer);
+                        tiklaElementi.style.display = "none";
+                    } else {
+                        opacity -= 0.03;
+                        tiklaElementi.style.opacity = opacity;
+                    }
+                }, 50);
+            }, 1500);
+        });
+    </script>
+
+    <script>
+        // tıklama animasyonu
+        document.addEventListener('click', function (e) {
+            var circle = document.createElement('div');
+            circle.className = 'circle';
+            circle.style.left = e.clientX + 'px';
+            circle.style.top = e.clientY + 'px';
+            document.body.appendChild(circle);
+
+            setTimeout(function () {
+                circle.style.transform = 'scale(10)';
+                circle.style.opacity = '0';
+            }, 10);
+
+            setTimeout(function () {
+                document.body.removeChild(circle);
+            }, 500);
+        });
+    </script>
+
+</body>
+
+</html>
